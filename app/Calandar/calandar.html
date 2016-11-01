@@ -1,0 +1,246 @@
+
+            <section class="section-title img-communityprofile">
+                <div class="overlay-bg"></div>
+                <div class="container">
+                    <h1>Community Profile</h1>
+                </div>
+            </section>
+            <!-- End Section Title --> 
+
+            <!-- Section Area - Content Central -->
+            <section class="content-info">
+                
+                   <!-- Menu-->
+                <div class="crumbs">
+                     <nav class="mainmenu">
+                    <div class="container">
+                        
+                        <ul class="sf-menu" id="menu">
+                            <li class="selected">
+                                <a href="#/communityProfile/{{communityid}}">Team</a>
+                            </li>                                
+                            <li class="current">
+                                <a href="#/calandar/{{communityid}}">Calandar</a>   
+                            </li>
+                            <li class="current">
+                                <a href="#/teams&communities/{{communityid}}">Teams/Communities</a> 
+                            </li> 
+                            <li class="current">
+                                 <a href="#/invitations/{{communityid}}">Invitations</a>
+                            </li>
+                            <li class="current">
+                                 <a href="#/communityProfile/{{communityid}}/news">News</a>
+                            </li>  
+                        </ul>
+                       
+                    </div>
+                </nav>
+                </div>
+                 <!-- End Menu-->
+                
+
+             <div class="semiboxshadow text-center">
+                    <img src="img/img-theme/shp.png" class="img-responsive" alt="">
+                    
+                </div>
+
+                <!-- Content Central -->
+                <div class="container padding-top">
+                    <div class="row">
+                        
+                        <!-- content Players --> 
+                        <div class="col-md-12">                     
+                            <!-- Panel Box -->
+                            <div class="panel-box">
+                                <div class="titles">
+                                    <h4><i class="fa fa-group"></i></h4>
+                                </div>
+                                <!-- Players --> 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!-- Item Players-->  
+                                        <div class="widget-container">
+
+<h2><img src="/img/icons/agenda.png">Agenda</h2>
+<div style="float:right;margin-right:50px;">
+    <button class="btn btn-info"data-toggle="collapse" data-target="#demo">Organize a game</button></div><br>
+    <div id="demo" class="collapse">
+        <div id="org">
+         <form ng-submit="newgame()" role="form">
+             <div class="form-group">
+                 <label for="name">Description:</label>
+                 <input ng-model="gameData.name" type="text" class="form-control" id="name" required>
+             </div>
+             <div class="form-group">
+                 <label for="sd">Start date:</label>
+                 <input ng-model="gameData.start_date" type="date" class="form-control" id="sd" required>
+             </div>
+             <div class="form-group">
+                 <label for="ed">End date:</label>
+                 <input ng-model="gameData.end_date" type="date" class="form-control" id="ed" required>
+             </div>
+             <div class="form-group">
+                 <label for="sport">Sport type:</label>
+                  <select class="form-control" id="sport" ng-model="gameData.sport" required>
+                      <option>Footbal</option>
+                      <option>VolleyBall</option>
+                      <option>Tenist</option>
+                      <option>Bascketball</option>
+                 </select>
+             </div>
+             <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div> <br>
+                               
+                                     
+                                         
+    <div class="agenda">
+        <div class="table-responsive">
+            <table class="table table-condensed table-bordered">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Event</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr ng-repeat="g in games">
+                        <td class="agenda-date" class="active" rowspan="1">
+                            <div class="dayofmonth"></div>
+                            <div class="dayofweek">{{g.start_date}}</div>
+                            <div class="shortdate text-muted">{{g.end_date}}</div>
+                        </td>
+                        <td class="agenda-time">
+                           {{g.status}}
+                        </td>
+                        <td class="agenda-events">
+                            <div class="agenda-event">
+                                <i class="fa fa-comment" title="Repeating event"></i> 
+                                {{g.name}}
+                            </div>
+                        </td>
+                        
+                    </tr>
+               
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+                                        <!-- End Item Players  
+                                    </div>
+                                </div>
+                                <!-- End Players -->                                
+                            </div>  
+                            <!-- End Panel Box --> 
+
+            
+
+            </div>
+                        </div>
+                        <!-- End Players -->
+
+
+                    
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h5>Be the sport Man and organize your game now <img src="/img/icons/volleyball.png"> <img src="/img/icons/basketball.png"> <img src="/img/icons/football.png"> <img src="/img/icons/tennis.png"></h5>
+      </div>
+      <div class="modal-body">
+        <form role="form" action="/TeamProfile/teamProfile.html">
+        <center><table>
+            <tr><td>Comunity's Name</td><td><input type="text" class="form-control" id="ex1"  required></td></tr>
+            <tr><td><br></td></tr>
+            <tr><td>Slogan</td><td><input type="text" class="form-control" id="ex1"  required></td></tr>
+            <tr><td><br></td></tr>
+            <tr><td>Sport's Type</td>
+                <td>
+                    <select class="form-control" >
+                        <option>FootBall</option>
+                        <option>BasketBall</option>
+                        <option>VollayBall</option>
+                        <option>Tennis</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td><br></td></tr>
+            <tr><td>Date</td>
+                <td>
+                     <input type='date' class="form-control"/>
+                </td>
+            </tr>
+             <tr><td><br></td></tr>
+            <tr><td>Time</td>
+                <td>
+                    <input type='time' class="form-control" />
+                </td>
+            </tr>
+        </table></center>
+        <br>
+         <center><a href="#/teamProfile" type="button" class="btn btn-success">Submit</a>&nbsp;<a href="#"class="btn btn-default" >Reset</a></center>
+        </form>
+        
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        
+                    </div>                     
+                  
+                <!-- End Content Central -->
+
+             
+            </section>
+            <!-- End Section Area - Content Central -->
+      
+        
+
+            <!-- footer Down-->
+            <div class="footer-down">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <p>&copy; 2014 WordCup . All Rights Reserved.  1995 - 2014</p>
+                        </div>
+                        <div class="col-md-7">
+                            <!-- Nav Footer-->
+                            <ul class="nav-footer">
+                                <li><a href="#">HOME</a> </li>
+                                <li><a href="#">EVENTS</a></li>
+                                <li><a href="#">TEAM</a></li> 
+                                <li><a href="#">GALLERY</a></li> 
+                                <li><a href="#">SPORT</a></li>                
+                                <li><a href="#">CONTACT</a></li>
+                            </ul>
+                            <!-- End Nav Footer-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer Down-->
+
+        <!-- End layout-->
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/bootstrap/bootstrap.js"></script> 
